@@ -1,0 +1,74 @@
+$breakpoint: 800px;
+
+.mainHome {
+  //background-image: url('/lake.jpeg');
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  //background-position: center center;
+  height: 100vh;
+  padding: 3vw;
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+
+  .sliderTrack {
+    display: flex;
+    width: max-content;
+    animation: scroll 60s linear infinite;
+  }
+
+  //&:has(img:hover) .sliderTrack {
+  //  animation-play-state: paused;
+  //}
+
+  .sliderGroup {
+    align-items: center;
+    display: flex;
+    gap: 10vw;
+    padding-right: 10vw;
+    flex-shrink: 0;
+  }
+
+  .sliderItem {
+    img {
+      height: auto;
+      flex-shrink: 0;
+      //cursor: pointer;
+
+      @media (max-width: $breakpoint) {
+        //pointer-events: none;
+        width: 200px;
+      }
+    }
+
+    p {
+      //opacity: 0;
+    }
+
+    //@media (min-width: $breakpoint) {
+    //  &:hover p {
+    //    opacity: 1;
+    //    transition: opacity 1s;
+    //  }
+    //}
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sliderTrack {
+    animation: none;
+  }
+}
